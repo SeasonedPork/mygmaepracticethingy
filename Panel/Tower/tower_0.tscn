@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://cqlu05wtg1yc1"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ppxr1"]
+
+[node name="tower0" type="Panel"]
+custom_minimum_size = Vector2(40, 40)
+offset_right = 20.0
+offset_bottom = 20.0
+scale = Vector2(4, 4)
+
+[node name="Panel" type="Sprite2D" parent="."]
+position = Vector2(20, 20)
+scale = Vector2(35, 35)
+texture = SubResource("CanvasTexture_ppxr1")
