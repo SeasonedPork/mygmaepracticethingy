@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://e8qvywr3pdw0"]
+
+[ext_resource type="Script" path="res://Component/Detect_Player.gd" id="1_r2mh0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_reu1w"]
+
+[node name="Detect_Player" type="Node2D"]
+script = ExtResource("1_r2mh0")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_reu1w")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://3d8varq6rsod"]
+
+[ext_resource type="Script" path="res://Scene/Main.gd" id="1_fbt0g"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_fbt0g")
+
+[node name="Play" type="Button" parent="."]
+offset_left = 95.0
+offset_top = 543.0
+offset_right = 211.0
+offset_bottom = 621.0
+text = "Start Journey"
+
+[node name="Setting" type="Button" parent="."]
+offset_left = 484.0
+offset_top = 546.0
+offset_right = 600.0
+offset_bottom = 624.0
+text = "Rearrange
+Setting"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 770.0
+offset_top = 536.0
+offset_right = 886.0
+offset_bottom = 614.0
+text = "End
+"
+
+[node name="test" type="Button" parent="."]
+offset_left = 284.0
+offset_top = 547.0
+offset_right = 400.0
+offset_bottom = 625.0
+text = "Test2"
+
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Setting" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="test" to="." method="_on_test_pressed"]

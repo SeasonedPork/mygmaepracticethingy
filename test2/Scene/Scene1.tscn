@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://cxwqu8tfvypse"]
+
+[ext_resource type="Script" path="res://Scene/Scene1.gd" id="1_bkv36"]
+[ext_resource type="PackedScene" uid="uid://bw3rscmy8nfmn" path="res://player.tscn" id="2_1yd21"]
+[ext_resource type="PackedScene" uid="uid://cvj5r278cmuku" path="res://Panel/UI.tscn" id="3_b0p4u"]
+[ext_resource type="PackedScene" uid="uid://b1oam346vudql" path="res://Structure/random_blocker1.tscn" id="3_y7a8r"]
+[ext_resource type="PackedScene" uid="uid://dxsnf3et1wkdj" path="res://Structure/Border.tscn" id="4_1n1j1"]
+
+[node name="testscene" type="Node2D"]
+script = ExtResource("1_bkv36")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+
+[node name="Player" parent="." instance=ExtResource("2_1yd21")]
+position = Vector2(253, 1200)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1280
+editor_draw_limits = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
+
+[node name="HUD" parent="Player/Camera2D/CanvasLayer" instance=ExtResource("3_b0p4u")]
+
+[node name="Blocker1" parent="." instance=ExtResource("3_y7a8r")]
+position = Vector2(666, 903)
+
+[node name="Blocker2" parent="." instance=ExtResource("3_y7a8r")]
+position = Vector2(839, 1079)
+
+[node name="Blocker3" parent="." instance=ExtResource("3_y7a8r")]
+position = Vector2(876, 842)
+
+[node name="Border" parent="." instance=ExtResource("4_1n1j1")]
+position = Vector2(-84, -240)
+
+[node name="Border2" parent="." instance=ExtResource("4_1n1j1")]
+position = Vector2(1930, -215)
+
+[node name="Border3" parent="." instance=ExtResource("4_1n1j1")]
+position = Vector2(1913, -85)
+rotation = 1.5708
+
+[node name="Border4" parent="." instance=ExtResource("4_1n1j1")]
+position = Vector2(1927, 1291)
+rotation = 1.5708

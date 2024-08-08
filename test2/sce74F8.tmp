@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://dgsyjnv1kbgtc"]
+
+[ext_resource type="PackedScene" uid="uid://dej3tf8sftolh" path="res://player.tscn" id="1_dnbh4"]
+[ext_resource type="PackedScene" uid="uid://b1oam346vudql" path="res://random_blocker1.tscn" id="2_jq5eh"]
+[ext_resource type="PackedScene" uid="uid://bgfu0qfryc35h" path="res://mob.tscn" id="3_7pgie"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -10
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_right = 717.0
+offset_bottom = 476.0
+
+[node name="Player" parent="." instance=ExtResource("1_dnbh4")]
+position = Vector2(165, 188)
+
+[node name="Blocker1" parent="." instance=ExtResource("2_jq5eh")]
+position = Vector2(113, 78)
+
+[node name="Blocker2" parent="." instance=ExtResource("2_jq5eh")]
+position = Vector2(240, 269)
+
+[node name="Blocker3" parent="." instance=ExtResource("2_jq5eh")]
+position = Vector2(337, 163)
+
+[node name="Mob" parent="." instance=ExtResource("3_7pgie")]
+position = Vector2(282, 127)

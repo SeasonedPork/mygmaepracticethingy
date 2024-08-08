@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://cecdli1sx53lx"]
+
+[ext_resource type="PackedScene" uid="uid://c8eavkc5mdqhn" path="res://Component/hitbox_component.tscn" id="1_ojduy"]
+[ext_resource type="PackedScene" uid="uid://casqfkmmkwmwb" path="res://Component/health_component.tscn" id="2_1egqh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r0tcw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m74kw"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_3wgg6"]
+
+[node name="Node2D" type="StaticBody2D"]
+
+[node name="Health_Component" parent="." instance=ExtResource("2_1egqh")]
+
+[node name="Hitbox_Component" parent="." instance=ExtResource("1_ojduy")]
+health_component = Object(Node2D,"_import_path":NodePath(""),"unique_name_in_owner":false,"process_mode":0,"process_priority":0,"process_physics_priority":0,"process_thread_group":0,"editor_description":"","visible":true,"modulate":Color(1, 1, 1, 1),"self_modulate":Color(1, 1, 1, 1),"show_behind_parent":false,"top_level":false,"clip_children":0,"light_mask":1,"visibility_layer":1,"z_index":0,"z_as_relative":true,"y_sort_enabled":false,"texture_filter":0,"texture_repeat":0,"material":null,"use_parent_material":false,"position":Vector2(0, 0),"rotation":0.0,"scale":Vector2(1, 1),"skew":0.0,"script":Resource("res://Component/Health_Component.gd"),"MAX_Health":10)
+
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox_Component"]
+scale = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_r0tcw")
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+scale = Vector2(8, 8)
+shape = SubResource("RectangleShape2D_m74kw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.0333333, 1, 1)
+position = Vector2(1, 0)
+scale = Vector2(180, 180)
+texture = SubResource("CanvasTexture_3wgg6")

@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://dq2qhe284ba3h"]
+
+[ext_resource type="Script" path="res://Bullet_type/bullet.gd" id="1_u2j53"]
+[ext_resource type="PackedScene" uid="uid://c8eavkc5mdqhn" path="res://Component/hitbox_component.tscn" id="2_tdbbr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_loyfh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6ta5"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_ci6vj"]
+
+[node name="Bullet" type="Area2D"]
+top_level = true
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_u2j53")
+
+[node name="Hitbox_Component" parent="." instance=ExtResource("2_tdbbr")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox_Component"]
+shape = SubResource("RectangleShape2D_loyfh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("RectangleShape2D_a6ta5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.639216, 0, 0.607843, 0.505882)
+position = Vector2(1.19209e-06, 3.27826e-07)
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_ci6vj")

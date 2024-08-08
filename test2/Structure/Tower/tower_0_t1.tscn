@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvalo7rbsp75h"]
+
+[ext_resource type="PackedScene" uid="uid://dtg4hs7qq3d66" path="res://Weapon/weapon_0.tscn" id="1_fv64t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a6cbm"]
+size = Vector2(20, 16)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_h4lqm"]
+texture_filter = 2
+
+[node name="tower_0" type="StaticBody2D"]
+
+[node name="weapon0" parent="." instance=ExtResource("1_fv64t")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color(0, 0, 1, 1)
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_a6cbm")
+debug_color = Color(0, 0.611765, 0.615686, 0.419608)
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(4.17233e-07, 0)
+scale = Vector2(20, 16)
+texture = SubResource("CanvasTexture_h4lqm")

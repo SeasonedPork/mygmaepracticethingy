@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bixojw5o87ndc"]
+
+[ext_resource type="Script" path="res://Structure/Tower/TowerIcon/tower_0.gd" id="1_emd50"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_bgln0"]
+
+[node name="Tower_0" type="Panel"]
+clip_contents = true
+custom_minimum_size = Vector2(50, 50)
+offset_right = 50.0
+offset_bottom = 50.0
+script = ExtResource("1_emd50")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.0745098, 0.690196, 1, 1)
+position = Vector2(25, 25)
+scale = Vector2(25, 25)
+texture = SubResource("CanvasTexture_bgln0")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]

@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bamy7kdc8487q"]
+
+[ext_resource type="Script" path="res://Structure/Spawner/Spawner_Timer.gd" id="1_u7cts"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yu4ys"]
+size = Vector2(20, 16)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_h8u7v"]
+texture_filter = 2
+
+[node name="Node2D" type="StaticBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+modulate = Color(0, 0.406604, 0.195553, 1)
+position = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_yu4ys")
+debug_color = Color(0, 0.611765, 0.615686, 0.419608)
+
+[node name="AnimatedSprite2D" type="Sprite2D" parent="CollisionShape2D"]
+position = Vector2(4.17233e-07, 0)
+scale = Vector2(20, 16)
+texture = SubResource("CanvasTexture_h8u7v")
+
+[node name="Timer" type="Timer" parent="."]
+script = ExtResource("1_u7cts")
+
+[connection signal="timeout" from="Timer" to="Timer" method="_on_timeout"]

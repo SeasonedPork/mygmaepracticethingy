@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2gt80fwe4t4j"]
+
+[ext_resource type="Script" path="res://Bullet_type/bullet1.gd" id="1_scnsl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sw8se"]
+size = Vector2(25, 23)
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_bh0gt"]
+
+[node name="Bullet_1" type="Area2D"]
+top_level = true
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("1_scnsl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.1, 0.1)
+shape = SubResource("RectangleShape2D_sw8se")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.231373, 0.227451, 1)
+top_level = true
+position = Vector2(1.19209e-06, 3.27826e-07)
+scale = Vector2(5, 5)
+texture = SubResource("CanvasTexture_bh0gt")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

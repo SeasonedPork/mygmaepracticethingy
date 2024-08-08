@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://qlpbtil1ajis"]
+
+[ext_resource type="PackedScene" uid="uid://dxsnf3et1wkdj" path="res://Structure/Border.tscn" id="2_unxbw"]
+[ext_resource type="PackedScene" uid="uid://bw3rscmy8nfmn" path="res://player.tscn" id="3_7rrgk"]
+[ext_resource type="PackedScene" uid="uid://cvj5r278cmuku" path="res://Panel/UI.tscn" id="4_wyrvb"]
+
+[node name="Scene2" type="Node2D"]
+
+[node name="Border" parent="." instance=ExtResource("2_unxbw")]
+position = Vector2(-84, -240)
+
+[node name="Border2" parent="." instance=ExtResource("2_unxbw")]
+position = Vector2(1930, -215)
+
+[node name="Border3" parent="." instance=ExtResource("2_unxbw")]
+position = Vector2(1913, -85)
+rotation = 1.5708
+
+[node name="Border4" parent="." instance=ExtResource("2_unxbw")]
+position = Vector2(1930, 508)
+rotation = 1.5708
+
+[node name="Player" parent="." instance=ExtResource("3_7rrgk")]
+position = Vector2(253, 1200)
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+limit_left = 0
+limit_top = 0
+limit_right = 1920
+limit_bottom = 1280
+editor_draw_limits = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
+
+[node name="HUD" parent="Player/Camera2D/CanvasLayer" instance=ExtResource("4_wyrvb")]
